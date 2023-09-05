@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dryrunai-photo-generator-app-dev
+  annotations:
+    argocd/app-name: dryrunai-photo-generator-app-dev
+    backstage.io/kubernetes-id: dryrunai-photo-generator-app
+    backstage.io/kubernetes-namespace: dryrunai
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: keynote-demo/dryrunai-photo-generator
+    janus-idp.io/tekton-enabled: 'true'
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://console-openshift-console.apps.keynote.w6gk.p1.openshiftapps.com/dev-pipelines/ns/dryrunai/
+      title: Pipelines
+      icon: web
+    - url: https://console-openshift-console.apps.keynote.w6gk.p1.openshiftapps.com/k8s/ns/dryrunai/deployments/dryrunai-photo-generator-app
+      title: Deployment
+      icon: web
+    - url: https://devspaces.apps.keynote.w6gk.p1.openshiftapps.com/#https://github.com/keynote-demo/dryrunai-photo-generator?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: OpenShift Dev Spaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:default/blues-man"
